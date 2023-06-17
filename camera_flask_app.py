@@ -26,8 +26,8 @@ net = cv2.dnn.readNetFromCaffe('./saved_model/deploy.prototxt.txt', './saved_mod
 #instatiate flask app  
 app = Flask(__name__, template_folder='./templates')
 
-
 camera = cv2.VideoCapture(0)
+#camera = cv2.VideoCapture()
 
 def record(out):
     global rec_frame
@@ -144,7 +144,7 @@ def tasks():
                 thread = Thread(target = record, args=[out,])
                 thread.start()
             elif(rec==False):
-                out.release()
+                out.release() # type: ignore
                           
                  
     elif request.method=='GET':
