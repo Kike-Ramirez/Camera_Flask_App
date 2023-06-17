@@ -1,0 +1,15 @@
+version: '3.5'
+
+services:
+  camera_app:
+    build: .
+    restart: "unless-stopped"
+    container_name: camera_app
+    env_file:
+      - .barbara_env
+    ports:
+      - 5000:5000
+    devices:
+      - /dev/video0:/dev/video0
+    networks:
+      - barbaraServices
