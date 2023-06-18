@@ -11,5 +11,3 @@ services:
       - 5000:5000
     devices:
       - /dev/video0:/dev/video0
-    networks:
-      - barbaraServices
