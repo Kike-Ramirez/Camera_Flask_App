@@ -153,7 +153,7 @@ def tasks():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run('0.0.0.0', 5000)
     
 camera.release()
 cv2.destroyAllWindows()     
